@@ -25,6 +25,7 @@ img{
     flex: 1 0 200px;
     height: 130px;
     border: 4px solid rgb(56, 55, 92);
+    border-radius: 10%;
     margin: 6px;
 }
 .choices{
