@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock - Paper - Scissors</title>
+    <link rel = "icon" href ="img/3.jpg" type = "image/x-icon">
     <link rel="stylesheet" href="style/style.css">    
     <script>
         function selection(_src, imgNumber){
@@ -27,16 +28,21 @@
 
             if(imgNumber == computerSelection){
                 console.log("Draw!");
-                document.getElementById("text_output").innerHTML = "Draw!";
             } else if (imgNumber == 1 && computerSelection == 2 || imgNumber == 2 
             && computerSelection == 3 || imgNumber == 3 && computerSelection == 1){
                 computerPoints += 1;
                 console.log("Computer wins!");
-                document.getElementById("text_output").innerHTML = "Computer wins!";
             } else {
                 humanPoints += 1;
                 console.log("You win!");
+            }
+
+            if(humanPoints > computerPoints){
                 document.getElementById("text_output").innerHTML = "You win!";
+            } else if(humanPoints < computerPoints) {
+                document.getElementById("text_output").innerHTML = "Computer wins!";
+            } else {
+                document.getElementById("text_output").innerHTML = "Draw!";
             }
 
             document.getElementById("hText").innerHTML = humanPoints + "\n\n\n";
@@ -47,32 +53,34 @@
 <body>
     <!-- <h1 align="center">rock-paper-scissors</h1> -->
     <br>
-    <button type="button" onClick="window.location.reload();" id="Refresh">Refresh</button>
     <br><br>
-    <div class="buttons">
-        <div id="rock">
-            <input type="image" class="btn" onclick="selection(this.src, 1)" src="img/1.jpg" alt="ROCK">
-        </div>
-        <div id="paper">
-            <input type="image" class="btn" onclick="selection(this.src, 2)" src="img/2.jpg" alt="PAPER">
-        </div>
-        <div id="scissors">
-            <input type="image" class="btn" onclick="selection(this.src, 3)" src="img/3.jpg" alt="SCISSORS">
-        </div>
-    </div>
-    <div id="text_output">!!!</div>
-    <div class="choices">
-        <div class="choice" id="human">
-            <div id="hu">
-                <div>human:</div>
-                <div id="hText">0</div>
+    <div id="header">
+        <button type="button" onClick="window.location.reload();" id="Refresh">Refresh</button>
+        <div class="buttons">
+            <div id="rock">
+                <input type="image" class="btn" onclick="selection(this.src, 1)" src="img/1.jpg" alt="ROCK">
+            </div>
+            <div id="paper">
+                <input type="image" class="btn" onclick="selection(this.src, 2)" src="img/2.jpg" alt="PAPER">
+            </div>
+            <div id="scissors">
+                <input type="image" class="btn" onclick="selection(this.src, 3)" src="img/3.jpg" alt="SCISSORS">
             </div>
         </div>
-        <div class="choice" id="computer">
-            <div id="co">
-                <div>computer:</div>
-                <div id="cText">0</div>
-				<br>
+        <div id="text_output">!!!</div>
+        <div class="choices">
+            <div class="choice" id="human">
+                <div id="hu">
+                    <div>human:</div>
+                    <div id="hText">0</div>
+                </div>
+            </div>
+            <div class="choice" id="computer">
+                <div id="co">
+                    <div>computer:</div>
+                    <div id="cText">0</div>
+                    <br>
+                </div>
             </div>
         </div>
     </div>
