@@ -8,6 +8,7 @@ Rock-Paper-Scissors Game written in HTML, CSS, JavaScript
 * 3 image-buttons: rock, paper, scissors
 * Counters to display both player- and computer points
 * Output text displaying who's winning at the moment
+* All turns displayed until refresh
 * Refresh button
 
 # GOOD LUCK !
